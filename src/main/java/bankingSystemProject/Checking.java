@@ -6,11 +6,6 @@ public class Checking {
 	
 	
 	
-	
-	
-	
-	
-	
-	
+
 
 }
