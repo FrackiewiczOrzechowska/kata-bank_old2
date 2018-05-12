@@ -9,12 +9,10 @@ public abstract class Account {
 	double interestRate;
 	String accountNumber;
 	
-	CheckingAccount checking1  = new CheckingAccount("Ewa Kowalska", "11112222333", 3000);
-	
-	
-	
-	
-	
+	public Account (String name) {
+		System.out.println("Customer " + name);
+		System.out.println("New account " );
+	}
 	
 
 }

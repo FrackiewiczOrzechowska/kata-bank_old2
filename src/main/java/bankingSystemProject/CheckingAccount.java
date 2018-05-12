@@ -6,7 +6,7 @@ public class CheckingAccount extends Account{
 	int debitCardPIN;
 
 	public CheckingAccount(String name, String pesel, double initialDeposit) {
-		
+		super(name);
 		System.out.println("Checking account: ");
 	}
 	
