@@ -6,8 +6,12 @@ public abstract class Account {
 	String name;
 	String pesel;
 	double balance;
-	double interestRate;
+	double InterestRate;
 	String accountNumber;
+	
+
+		
+		
 	
 	
 	public Account (String name, String pesel, double initialDeposit) {
@@ -17,6 +21,7 @@ public abstract class Account {
 		
 		//Setting account numer
 		this.accountNumber = setAccountNumber();
+		
 	}
 	private String setAccountNumber() {
 		
@@ -28,7 +33,8 @@ public abstract class Account {
 	System.out.println(
 			"Customer: " + name +
 			"\nAccount number: " + accountNumber +
-			"\nBalance: " + balance
+			"\nBalance: " + balance  
+			
 			);
 	
 }

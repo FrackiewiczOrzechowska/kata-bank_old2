@@ -5,6 +5,9 @@ public class DepositAccount extends Account{
 	
 	int depositBalance;
 	int depositSafetyPIN;
+	double InterestRate = 4;
+	
+	
 	
 	public DepositAccount(String name, String pesel, double initialDeposit) {
 		super(name, pesel, initialDeposit);
@@ -20,7 +23,12 @@ public class DepositAccount extends Account{
 		System.out.println("Deposit account: ");
 		super.showInformation();
 		System.out.println("PIN: "+ depositSafetyPIN);
+		System.out.println("Interest rate equals: "+ InterestRate);
 	}
+	
+	
+
+
 	
 	
 	
