@@ -10,6 +10,8 @@ public class Main {
 	DepositAccount deposit1 = new DepositAccount ("Adam Nowak", "11114444777", 5000);
 	deposit1.showInformation();
 	checking1.showInformation();
+
+	
 	}
 	
 }
