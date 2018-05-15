@@ -11,7 +11,7 @@ public class Main {
 	deposit1.showInformation();
 	checking1.showInformation();
 
-	
+
 	}
 	
 }
