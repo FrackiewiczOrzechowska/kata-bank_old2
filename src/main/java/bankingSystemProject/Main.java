@@ -11,6 +11,10 @@ public class Main {
 	deposit1.showInformation();
 	checking1.showInformation();
 
+	deposit1.deposit(100);
+	deposit1.withdraw(50);
+	deposit1.transfer("Somwhere", 20);
+
 
 	}
 	
