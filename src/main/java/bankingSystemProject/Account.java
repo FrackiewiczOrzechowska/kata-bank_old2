@@ -52,7 +52,7 @@ public abstract class Account {
 	}
 
 	public void printBalance() {
-		System.out.println("Your balance equals " + amount + " zloty");
+		System.out.println("Your balance equals " + balance + " zloty");
 	}
 	public void showInformation() {
 	System.out.println(
