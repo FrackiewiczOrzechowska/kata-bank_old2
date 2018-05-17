@@ -3,9 +3,9 @@ package bankingSystemProject;
 public class DepositAccount extends Account{
 	
 	
-	int depositBalance;
-	int depositSafetyPIN;
-	double InterestRate = 4;
+	private int depositBalance;
+	private int depositSafetyPIN;
+	double interestRate = 4;
 	
 	
 	
@@ -13,6 +13,13 @@ public class DepositAccount extends Account{
 		super(name, pesel, initialDeposit);
 		accountNumber = "2" + accountNumber;
 		setDepositSafetyPIN();
+	}
+
+	public  void balanceWithInterest () {
+		double interestToAdd = balance * interestRate / 100;
+		System.out.println("Accrued interest equals " + interestToAdd);
+		balance = balance + interestToAdd;
+		printBalance();
 	}
 	
 	private void setDepositSafetyPIN() {
@@ -23,7 +30,7 @@ public class DepositAccount extends Account{
 		System.out.println("Deposit account: ");
 		super.showInformation();
 		System.out.println("PIN: "+ depositSafetyPIN);
-		System.out.println("Interest rate equals: "+ InterestRate);
+		System.out.println("Interest rate equals: "+ interestRate);
 	}
 	
 	

@@ -3,11 +3,11 @@ package bankingSystemProject;
 public abstract class Account {
 	
 	
-	String name;
-	String pesel;
-	double balance;
-	double InterestRate;
-	String accountNumber;
+	private String name;
+	private String pesel;
+	protected double balance;
+	protected String accountNumber;
+	double interestRate;
 	double amount;
 	
 
@@ -29,6 +29,8 @@ public abstract class Account {
 		int randomNumberForAccount = (int)(Math.random() * Math.pow(10, 6));
 		return "5000" + randomNumberForAccount ;
 	}
+
+	public abstract void balanceWithInterest ();
 
 	public void deposit(double amount){
 
