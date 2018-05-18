@@ -1,11 +1,14 @@
 package bankingSystemProject;
 
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
 	
 	public static void main(String[] args) {
+
+	    List<Account> accounts = new LinkedList<Account>();
 
 		String file = "C:\\Users\\Aleksandra\\Desktop\\bankSystemData.csv";
 
@@ -24,14 +27,34 @@ public class Main {
 
 		List<String[]> newAccountOwners = bankingSystemProject.CSV.read(file);
 		for(String[] accountOwner : newAccountOwners){
-            
+
 
             String name = accountOwner[0];
             String pesel = accountOwner[1];
             String accountType = accountOwner[2];
             double initialDeposit = Double.parseDouble(accountOwner[3]);
-            System.out.println(name + " " + pesel + " " + accountType + " " + initialDeposit);
+
+            if (accountType.equals("Checking")){
+
+                accounts.add(new CheckingAccount(name, pesel, initialDeposit));
+
+            }
+            else if (accountType.equals("Deposit")){
+
+                accounts.add(new DepositAccount(name, pesel, initialDeposit));
+            }
+
+            else {
+                System.out.println("Error reading account type");
+            }
         }
+
+
+        for(Account acc : accounts){
+		    System.out.println("\n************************");
+		    acc.showInformation();
+        }
+        //accounts.get(1).showInformation();
 
 	}
 	
