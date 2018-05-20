@@ -1,15 +1,13 @@
 package bankingSystemProject;
 
 
-import javax.swing.*;
-import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
-    private static Scanner x;
+
 
 	public static void main(String[] args) {
 
@@ -59,47 +57,21 @@ public class Main {
 
         */
         //accounts.get(1).showInformation();
+Scanner y = new Scanner(System.in);
 
-
-
-        String accountType;
-        //Calling the method for searching of the account, getting the data
+        String name1, accountType1;
+      UserInput userInput1 = new UserInput();
         System.out.println("Insert name and account type");
+        name1 = y.nextLine();
+        accountType1 = y.nextLine();
+        UserInput.searchAccount(name1, accountType1, file);
+
+
+      //userInput1.searchAccount();
 
 
     }
-        public static void searchAccount(String name, String accountType, String file) {
-	    boolean found = false;
-            try {
-                String customer = "";
-                String ID = "";
-                String type = "";
-                String balanceOfTheAccount = "";
 
-
-                x = new Scanner(new File(file));
-                x.useDelimiter("[,\n]");
-
-                while (x.hasNext() && !found)
-
-                {
-                    customer = x.next();
-                    if (customer.equals(name) && accountType.equals(type)){
-                        found = true;
-                    }
-                }
-                if (found ){
-                    JOptionPane.showMessageDialog(null,"Balance equals"+ balanceOfTheAccount);
-                }
-                else  {
-                    JOptionPane.showMessageDialog(null,"Account not found");
-                }
-            } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,"Error");
-            }
-
-
-        }
 
 
 
