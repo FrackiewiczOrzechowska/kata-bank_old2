@@ -59,7 +59,11 @@ public class Main {
        // */
         //accounts.get(1).showInformation();
 
-Scanner y = new Scanner(System.in);
+        Scanner y = new Scanner(System.in);
+        Scanner t = new Scanner(System.in);
+        Scanner m = new Scanner(System.in);
+        Scanner z = new Scanner(System.in);
+        Scanner n = new Scanner(System.in);
 
         String name1, accountType1, operationType;
       UserInput userInput1 = new UserInput();
@@ -90,16 +94,73 @@ Scanner y = new Scanner(System.in);
 
         int chosenActionNumber;
         chosenActionNumber = y.nextInt();
+        int accountID = -1;
+        if(chosenActionNumber == 1 || chosenActionNumber == 2|| chosenActionNumber == 3 || chosenActionNumber == 6 || chosenActionNumber == 7){
+            System.out.println(" Type in you account ID");
+            accountID = y.nextInt();
+        }
+
+
+
         switch(chosenActionNumber){
             case 1:
+                accounts.get(accountID).printBalance();
+                break;
+            case  2:
+                System.out.println(" Type in the amount you would like to withdraw");
+                int amountToWithdraw;
+                amountToWithdraw = y.nextInt();
+                accounts.get(accountID).withdraw(amountToWithdraw);
+                break;
+
+            case 3:
+                System.out.println(" Type in the amount you would like to deposit");
+                int amountToDeposit;
+                amountToDeposit = y.nextInt();
+                accounts.get(accountID).deposit(amountToDeposit);
+                break;
+            case 4:
+                System.out.println(" Type in you name");
+                String nameNewCustomer1= y.nextLine();
+                y.nextLine();
+                System.out.println(" Type in you PESEL");
+                String peselNewCustomer1 = t.nextLine();
+                System.out.println(" Type in the amount you would like to deposit");
+                double initialDepositNewCustomer1= n.nextDouble();
+                accounts.add(new DepositAccount(nameNewCustomer1, peselNewCustomer1, initialDepositNewCustomer1));
+                break;
+
+            case 5:
+                System.out.print(" Type in you name");
+                String nameNewCustomer2 = y.nextLine();
+                y.nextLine();
+                System.out.print(" Type in you PESEL");
+                String peselNewCustomer2 = m.nextLine();
+                System.out.print(" Type in the amount you would like to deposit");
+                double initialDepositNewCustomer2 = z.nextDouble();
+                accounts.add(new CheckingAccount(nameNewCustomer2, peselNewCustomer2, initialDepositNewCustomer2));
+                break;
+            case 6:
+                System.out.println("Type in where the savings should be transferred");
+                String destinationAfterDeletion1;
+                destinationAfterDeletion1 = y.nextLine();
+                accounts.get(accountID).transfer(destinationAfterDeletion1,accounts.get(accountID).getBalance());
+                ((LinkedList<Account>) accounts).remove(accountID);
+                System.out.println(" Account has been terminated");
+            case 7:
+                System.out.println("Type in where the savings should be transferred");
+                String destinationAfterDeletion2;
+                destinationAfterDeletion2 = y.nextLine();
+                accounts.get(accountID).transfer(destinationAfterDeletion2,accounts.get(accountID).getBalance());
+                ((LinkedList<Account>) accounts).remove(accountID);
+                System.out.println(" Account has been terminated");
+
+
         }
 
       //userInput1.searchAccount();
 
     }
-
-
-
 
 
 

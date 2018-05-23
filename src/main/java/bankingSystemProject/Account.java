@@ -54,6 +54,10 @@ public abstract class Account {
 	public void printBalance() {
 		System.out.println("Your balance equals " + balance + " zloty");
 	}
+
+	public double getBalance() {
+		return balance;
+	}
 	public void showInformation() {
 	System.out.println(
 			"Customer: " + name +
