@@ -1,6 +1,5 @@
 package bankingSystemProject;
 
-import javax.swing.*;
 import java.io.File;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class UserInput {
     //Calling the method for searching of the account, getting the data
 
 
-    public static void searchAccount(String name, String accountType, String file) {
+    public static boolean searchAccount(String name, String accountType, String file) {
 
         boolean found = false;
         try {
@@ -35,18 +34,24 @@ public class UserInput {
 
                 if (customer.equals(name) && type.equals(accountType)){
                     found = true;
+
+
                 }
             }
             if (found ){
-                JOptionPane.showMessageDialog(null,"Balance equals "+ balanceOfTheAccount);
+                System.out.println("Account is active");
+
             }
             else  {
-                JOptionPane.showMessageDialog(null,"Account not found");
+                System.out.println("Account not found");
+
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null,"Error");
+            System.out.println("Error");
         }
 
-
+    return found;
     }
+
+
 }

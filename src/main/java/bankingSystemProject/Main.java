@@ -28,7 +28,7 @@ public class Main {
 
 	*/
 
-        List<String[]> newAccountOwners = bankingSystemProject.CSV.read(file);
+        List<String[]> newAccountOwners = CSV.read(file);
         for (String[] accountOwner : newAccountOwners) {
 
 
@@ -50,27 +50,54 @@ public class Main {
         }
 
 
-        /*for(Account acc : accounts){
+        /*
+        for(Account acc : accounts){
 		    System.out.println("\n************************");
 		    acc.showInformation();
         }
 
-        */
+       // */
         //accounts.get(1).showInformation();
+
 Scanner y = new Scanner(System.in);
 
-        String name1, accountType1;
+        String name1, accountType1, operationType;
       UserInput userInput1 = new UserInput();
         System.out.println("Insert name and account type");
         name1 = y.nextLine();
         accountType1 = y.nextLine();
-        UserInput.searchAccount(name1, accountType1, file);
+        boolean accountStatus;
 
+        accountStatus = UserInput.searchAccount(name1, accountType1, file);
+
+        if (accountStatus == true)System.out.println("Choose the operation you would like to perform"+
+                        "\nIf you would like to check balance, press 1"+
+                        "\nIf you would like to withdraw money, press 2"+
+                        "\nIf you would like to deposit money, press 3"+
+                        "\nIf you would like to open a deposit account press 4"+
+                        "\nIf you would like to open checking account press 5"+
+                        "\nIf you would like to close deposit account press 6"+
+                        "\nIf you would like to close checking account press 7"
+        );
+
+        if (accountStatus == false)System.out.println("Choose the operation you would like to perform"+
+                "\nIf you would like to open a deposit account press 4"+
+                "\nIf you would like to open checking account press 5"
+
+        );
+
+
+
+        int chosenActionNumber;
+        chosenActionNumber = y.nextInt();
+        switch(chosenActionNumber){
+            case 1:
+        }
 
       //userInput1.searchAccount();
 
-
     }
+
 
 
 
